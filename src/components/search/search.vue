@@ -1,11 +1,15 @@
 <template>
    <div>
-       {{ $route.params.search }}
-       <div v-for="movie in movies">{{ movie.title }} </div>
+
+       <infinite-loading @infinite="infiniteHandler" spinner="circles">
+           <comp-movie v-for="movie in movies" :movie="movie"></comp-movie>
+       </infinite-loading>
    </div>
 </template>
 
 <script>
+import InfiniteLoading from 'vue-infinite-loading';
+
 import axios from 'axios';
 import movie from './movie.vue'
 
@@ -28,7 +32,8 @@ export default {
             .catch(err => console.log(err))
     },
     components: {
-        compMovie : movie
+        compMovie : movie,
+        InfiniteLoading
     }
 }
 </script>
