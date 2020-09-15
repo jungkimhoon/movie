@@ -1,17 +1,20 @@
 <template>
-    <div class="col-sm-6 col-md-4">
+    <div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="containedImg">
-                    <img class="imageClass" :src="movie.image"  v-if="movie.image != ''">
+                    <img class="imageClass" :src="movie.image"  v-if="movie.image != ''" @click="goLink(movie.link)">
                     <img class="imageClass" src="../../image/mean.jpg" v-else>
                 </div>
                 <div style="width:30px; float: left; height: 150px;"></div>
                 <div class="containMovie">
                     <h3 v-html="movie.title"></h3>
-                    감독 : <middle v-html='director.join(" ")'></middle><br>
-                    평점 : <middle v-html='movie.userRating'></middle><br>
-                    제작년도 : <middle v-html='movie.pubDate'></middle>
+                    감독 : <span v-html='director.join(" ")'></span><br>
+                    제작년도 : <span v-html='movie.pubDate'></span><br><br>
+                    <span class='star-rating'>
+                            <span :style="{width:movie.userRating*10+'%'}"></span>
+                    </span><br>
+
                 </div>
             </div>
 
@@ -25,6 +28,11 @@ export default {
     data(){
         return{
             director : this.movie.director.split("|")
+        }
+    },
+    methods: {
+        goLink(link){
+            location.href = link;
         }
     }
 }
@@ -46,4 +54,7 @@ export default {
         width: 150px;
         cursor: pointer;
     }
+    .star-rating { width:183px; }
+    .star-rating,.star-rating span { display:inline-block; height:33px; overflow:hidden; background:url(../../image/star.png)no-repeat; }
+    .star-rating span{ background-position:left bottom; line-height:0; vertical-align:top; }
 </style>

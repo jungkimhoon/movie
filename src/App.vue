@@ -1,9 +1,11 @@
 <template>
   <div>
       <app-header></app-header>
-      <transition name="slide" mode="out-in">
-          <router-view :key="$route.fullPath"></router-view>
-      </transition>
+      <div style="margin: 100px;">
+          <transition name="slide" mode="out-in">
+              <router-view :key="$route.fullPath"></router-view>
+          </transition>
+      </div>
   </div>
 </template>
 

@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
     data () {
         return {
@@ -38,7 +40,12 @@ export default {
                 email: this.email,
                 password: this.password,
             }
-            console.log(formData)
+            axios.post('http://localhost:8088/user', formData)
+                .then(res => {
+                    if(res.data.email == null) alert('fail')
+                    else alert(res.data.email)
+                })
+                .catch(error => console.log(error))
         }
     }
 }

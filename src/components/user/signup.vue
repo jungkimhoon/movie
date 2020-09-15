@@ -3,62 +3,45 @@
         <div class="signup-form">
             <form @submit.prevent="onSubmit">
                 <div class="input">
-                    <label for="email">Mail</label>
+                    <label for="email">메일</label>
                     <input
                         type="email"
                         id="email"
                         v-model="email">
                 </div>
                 <div class="input">
-                    <label for="age">Your Age</label>
+                    <label for="age">나이</label>
                     <input
                         type="number"
                         id="age"
                         v-model.number="age">
                 </div>
                 <div class="input">
-                    <label for="password">Password</label>
+                    <label for="password">비밀번호</label>
                     <input
                         type="password"
                         id="password"
                         v-model="password">
                 </div>
                 <div class="input">
-                    <label for="confirm-password">Confirm Password</label>
+                    <label for="confirm-password">비밀번호 확인</label>
                     <input
                         type="password"
                         id="confirm-password"
                         v-model="confirmPassword">
                 </div>
                 <div class="input">
-                    <label for="country">Country</label>
+                    <label for="country">국가</label>
                     <select id="country" v-model="country">
+                        <option value="korea">Korea</option>
                         <option value="usa">USA</option>
-                        <option value="india">India</option>
-                        <option value="uk">UK</option>
-                        <option value="germany">Germany</option>
+                        <option value="india">Japan</option>
+                        <option value="germany">China</option>
                     </select>
-                </div>
-                <div class="hobbies">
-                    <h3>Add some Hobbies</h3>
-                    <button @click="onAddHobby" type="button">Add Hobby</button>
-                    <div class="hobby-list">
-                        <div
-                            class="input"
-                            v-for="(hobbyInput, index) in hobbyInputs"
-                            :key="hobbyInput.id">
-                            <label :for="hobbyInput.id">Hobby #{{ index }}</label>
-                            <input
-                                type="text"
-                                :id="hobbyInput.id"
-                                v-model="hobbyInput.value">
-                            <button @click="onDeleteHobby(hobbyInput.id)" type="button">X</button>
-                        </div>
-                    </div>
                 </div>
                 <div class="input inline">
                     <input type="checkbox" id="terms" v-model="terms">
-                    <label for="terms">Accept Terms of Use</label>
+                    <label for="terms">가입 동의</label>
                 </div>
                 <div class="submit">
                     <button type="submit">Submit</button>
@@ -69,6 +52,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 
 export default {
     data () {
@@ -77,22 +61,11 @@ export default {
             age: null,
             password: '',
             confirmPassword: '',
-            country: 'usa',
-            hobbyInputs: [],
+            country: 'korea',
             terms: false
         }
     },
     methods: {
-        onAddHobby () {
-            const newHobby = {
-                id: Math.random() * Math.random() * 1000,
-                value: ''
-            }
-            this.hobbyInputs.push(newHobby)
-        },
-        onDeleteHobby (id) {
-            this.hobbyInputs = this.hobbyInputs.filter(hobby => hobby.id !== id)
-        },
         onSubmit () {
             const formData = {
                 email: this.email,
@@ -100,13 +73,12 @@ export default {
                 password: this.password,
                 confirmPassword: this.confirmPassword,
                 country: this.country,
-                hobbies: this.hobbyInputs.map(hobby => hobby.value),
                 terms: this.terms
             }
             console.log(formData)
-            // axios.post('/users.json', formData)
-            //     .then(res => console.log(res))
-            //     .catch(error => console.log(error))
+            axios.post('http://localhost:8088/users', formData)
+                 .then(res => console.log(res))
+                 .catch(error => console.log(error))
         }
     }
 }

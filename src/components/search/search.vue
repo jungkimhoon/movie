@@ -1,15 +1,10 @@
 <template>
    <div>
-
-       <infinite-loading @infinite="infiniteHandler" spinner="circles">
-           <comp-movie v-for="movie in movies" :movie="movie"></comp-movie>
-       </infinite-loading>
+       <comp-movie v-for="movie in movies" :movie="movie"></comp-movie>
    </div>
 </template>
 
 <script>
-import InfiniteLoading from 'vue-infinite-loading';
-
 import axios from 'axios';
 import movie from './movie.vue'
 
@@ -33,7 +28,6 @@ export default {
     },
     components: {
         compMovie : movie,
-        InfiniteLoading
     }
 }
 </script>
