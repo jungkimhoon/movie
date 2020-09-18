@@ -3,7 +3,7 @@ import App from './App.vue'
 
 import axios from 'axios'
 import router from './router'
-import AxiosPlugin from 'vue-axios-cors';
+import store from './store/store'
 
 
 axios.defaults.headers.get['Accepts'] = 'application/json'
@@ -15,9 +15,7 @@ axios.defaults.headers.common['X-Naver-Client-Secret'] = 'VQsaz1sI4e';
 
 new Vue({
   el: '#app',
-    router,
+  router,
+  store,
   render: h => h(App)
 })
-
-
-Vue.use(AxiosPlugin)

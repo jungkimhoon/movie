@@ -42,8 +42,11 @@ export default {
             }
             axios.post('http://localhost:8088/user', formData)
                 .then(res => {
-                    if(res.data.email == null) alert('fail')
-                    else alert(res.data.email)
+                   const token = res.data.token;
+                   this.$store.state.token = token;
+                   localStorage.token = token;
+
+                   this.$router.push('/')
                 })
                 .catch(error => console.log(error))
         }
