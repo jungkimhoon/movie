@@ -5,7 +5,9 @@ import Home from './components/Home.vue'
 import signin from "./components/user/signin.vue";
 import signup from "./components/user/signup.vue";
 import search from "./components/search/search.vue";
-import store from "./store/store"
+import myPage from "./components/user/mypage.vue";
+
+import store from "./store/store";
 
 Vue.use(VueRouter)
 
@@ -16,14 +18,13 @@ const routes = [
     { path: '/search/:search', component: search},
     { path: '/logout',
       beforeEnter(to, from, next) {
-          alert('로그아웃 되었습니다.');
-
-          store.state.token = null;
+          store.dispatch('LOGOUT')
           localStorage.clear();
 
           next('/');
       }
-    }
+    },
+    { path: '/myPage', component: myPage}
 ]
 
 export default new VueRouter({mode:'history', routes,

@@ -14,9 +14,12 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul v-if="!loginCheck" class="nav navbar-nav">
                     <router-link to="/signin" activeClass="active" tag="li"><a>sign in</a></router-link>
                     <router-link to="/signup" activeClass="active" tag="li"><a>sign up</a></router-link>
+                </ul>
+                <ul v-else class="nav navbar-nav">
+                    <router-link to="/mypage" v-if="loginCheck" activeClass="active" tag="li"><a>mypage</a></router-link>
                 </ul>
                 <form class="navbar-form navbar-left">
                     <div class="form-group">
@@ -26,7 +29,7 @@
                         Submit
                     </router-link>
                 </form>
-                <ul class="nav navbar-nav navbar-right">
+                <ul v-if="loginCheck" class="nav navbar-nav navbar-right">
                     <li><a href="/logout">LOGOUT</a></li>
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -41,8 +44,10 @@ export default {
              search : ''
          }
      },
-    ethods : {
-
+    computed: {
+        loginCheck(){
+            return this.$store.getters.loginCheck;
+        }
     }
 }
 </script>
