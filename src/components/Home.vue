@@ -1,12 +1,12 @@
 <template>
-    <div class="welcome">
-        <h1>HOME</h1>
+    <div id="welcome">
+        <img src="../image/mean.jpg" height="500px" width="80%">
     </div>
 </template>
 
 <script>
 export default {
-    name: "Home"
+
 }
 </script>
 

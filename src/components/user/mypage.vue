@@ -1,6 +1,7 @@
 <template>
     <div id="signup">
         <div class="signup-form">
+            <h1>마이페이지</h1><hr>
             <form @submit.prevent="onSubmit">
                 <div class="input">
                     <label for="email">메일</label>
@@ -54,11 +55,26 @@ import {mapGetters} from 'vuex';
 export default {
    data(){
        return{
-           info: this.$store.getters.myInfo
+           info: {}
        }
    },
-    Create() {
-        this.$store.dispatch('MYPAGE')
+    created() {
+        axios.post('http://localhost:8088/myPage', {},{
+            headers: {
+                authorization: this.$store.getters.auth_token
+            }
+        })
+            .then(res =>  {
+                this.info = res.data
+            })
+            .catch(error => {
+                console.log(error)
+                alert('에러');
+                localStorage.clear();
+                this.$store.state.loginState = false;
+                this.$store.state.token = undefined;
+                this.$router.push('/');
+            })
     },
     methods : {
        updateMyInfo(){

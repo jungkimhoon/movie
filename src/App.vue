@@ -6,15 +6,18 @@
               <router-view :key="$route.fullPath"></router-view>
           </transition>
       </div>
+      <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import Header from './components/header/header.vue';
+import Header from './components/common/header.vue';
+import Footer from './components/common/footer.vue';
 
 export default {
     components: {
-        'app-header': Header
+        'app-header': Header,
+        'app-footer': Footer
     },
 }
 </script>

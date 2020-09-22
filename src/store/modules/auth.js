@@ -4,40 +4,12 @@ import router from '../../router';
 const state = {
     token: null,
     loginState: false,
-    myInfo: {}
 }
 
 const mutations = {
-    'LOGIN' (state, payload) {
-        axios.post('http://localhost:8088/user', payload)
-            .then(res => {
-                let token = res.headers["authorization"];
-                if(token != undefined) {
-                    state.token = token;
-                    console.log(state.token)
-                    state.loginState = true;
-                    localStorage.setItem("access_token", token)
-                }
-            })
-            .catch(error => console.log(error))
-    },
-    'MYPAGE' (state) {
-        axios.post('http://localhost:8088/myPage', {},{
-            headers: {
-                authorization: state.token
-            }
-        })
-        .then(res => {
-            console.log(res.data)
-            state.myInfo = res.data;
-        })
-        .catch(error => {
-            alert('재로그인 하세요.');
-            localStorage.clear();
-            state.loginState = false;
-            state.token = undefined;
-            router.push('/');
-        })
+    'LOGIN' (state, token) {
+        state.loginState = true;
+        state.token = token;
     },
     'LOGOUT' (state) {
         state.token = undefined;
@@ -63,11 +35,16 @@ const mutations = {
 };
 
 const actions = {
-    'LOGIN'({ commit }, payload){
-        commit('LOGIN', payload)
-    },
-    'MYPAGE'({ commit }){
-        commit('MYPAGE')
+    'LOGIN'({ commit }, formData){
+        axios.post('http://localhost:8088/user', {
+            email: formData.email,
+            password: formData.password
+        })
+        .then(res => {
+            commit('LOGIN', res.headers["authorization"])
+            // localStorage.setItem("access_token", token)
+        })
+        .catch(error => console.log(error))
     },
     'LOGOUT'({ commit }){
         alert('로그아웃')
@@ -85,6 +62,9 @@ const getters = {
     myInfo (state){
         return state.myInfo;
     },
+    auth_token (state){
+        return state.token;
+    }
 };
 
 export default {

@@ -19,7 +19,7 @@
                     <router-link to="/signup" activeClass="active" tag="li"><a>sign up</a></router-link>
                 </ul>
                 <ul v-else class="nav navbar-nav">
-                    <router-link to="/mypage" v-if="loginCheck" activeClass="active" tag="li"><a>mypage</a></router-link>
+
                 </ul>
                 <form class="navbar-form navbar-left">
                     <div class="form-group">
@@ -30,7 +30,8 @@
                     </router-link>
                 </form>
                 <ul v-if="loginCheck" class="nav navbar-nav navbar-right">
-                    <li><a href="/logout">LOGOUT</a></li>
+                    <router-link to="/logout" activeClass="active" tag="li"><a>LOGOUT</a></router-link>
+                    <router-link to="/mypage" activeClass="active" tag="li"><a>mypage</a></router-link>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
