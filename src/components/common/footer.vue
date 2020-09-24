@@ -1,9 +1,11 @@
 <template>
     <div class="jumbotron">
-        <div class="container">
-            <h1>fds</h1>
+        <div style="text-align: center">
+            <h1>JUNGKIMHOON</h1>
+            <p>김정훈</p>
         </div>
     </div>
+
 </template>
 
 <script>

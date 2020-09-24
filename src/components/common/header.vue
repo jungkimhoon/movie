@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
@@ -14,7 +14,7 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul v-if="!loginCheck" class="nav navbar-nav">
+                <ul v-if="!loginCheck" class="nav navbar-nav ">
                     <router-link to="/signin" activeClass="active" tag="li"><a>sign in</a></router-link>
                     <router-link to="/signup" activeClass="active" tag="li"><a>sign up</a></router-link>
                 </ul>

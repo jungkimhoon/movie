@@ -1,6 +1,8 @@
 <template>
     <div id="welcome">
-        <img src="../image/mean.jpg" height="500px" width="80%">
+        <div>
+            <img src="../image/mean.jpg" height="500px" width="50%" align="center">
+        </div>
     </div>
 </template>
 
@@ -13,7 +15,8 @@ export default {
 <style scoped>
 #welcome {
     width: 80%;
-    margin: 50px auto;
+    margin: 0px auto;
+    text-align: center;
 }
 
 h1 {

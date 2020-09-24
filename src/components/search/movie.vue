@@ -6,15 +6,15 @@
                     <img class="imageClass" :src="movie.image"  v-if="movie.image != ''" @click="goLink(movie.link)">
                     <img class="imageClass" src="../../image/mean.jpg" v-else>
                 </div>
-                <div style="width:30px; float: left; height: 150px;"></div>
+                <div style="width:30px; float: left; height: 200px;"></div>
                 <div class="containMovie">
-                    <h3 v-html="movie.title"></h3>
+                    <h4 v-html="movie.title"></h4>
                     감독 : <span v-html='director.join(" ")'></span><br>
-                    제작년도 : <span v-html='movie.pubDate'></span><br><br>
+                    제작년도 : <span v-html='movie.pubDate'></span><br>
+                    평점 : <span v-html="movie.userRating" style="font-size: large"></span><br><br>
                     <span class='star-rating'>
-                            <span :style="{width:movie.userRating*10+'%'}"></span>
+                            <span :style="{width: movie.userRating*10+'%'}"></span>
                     </span><br>
-
                 </div>
             </div>
 
@@ -54,7 +54,8 @@ export default {
         width: 150px;
         cursor: pointer;
     }
-    .star-rating { width:183px; }
+
+    .star-rating { width:192px; }
     .star-rating,.star-rating span { display:inline-block; height:33px; overflow:hidden; background:url(../../image/star.png)no-repeat; }
     .star-rating span{ background-position:left bottom; line-height:0; vertical-align:top; }
 </style>
