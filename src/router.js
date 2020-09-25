@@ -6,6 +6,7 @@ import signin from "./components/user/signin.vue";
 import signup from "./components/user/signup.vue";
 import search from "./components/search/search.vue";
 import myPage from "./components/user/mypage.vue";
+import boardWrite from "./components/board/BoardWrite.vue";
 
 import store from "./store/store";
 
@@ -24,7 +25,8 @@ const routes = [
           next('/');
       }
     },
-    { path: '/myPage', component: myPage}
+    { path: '/myPage', component: myPage},
+    { path: '/board/write', component: boardWrite}
 ]
 
 export default new VueRouter({mode:'history', routes,

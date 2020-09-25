@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <router-link to="/"><a class="navbar-brand">김정훈 후로젝</a></router-link>
+                <router-link to="/"><a class="navbar-brand">KMDB</a></router-link>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -18,20 +18,27 @@
                     <router-link to="/signin" activeClass="active" tag="li"><a>sign in</a></router-link>
                     <router-link to="/signup" activeClass="active" tag="li"><a>sign up</a></router-link>
                 </ul>
-                <ul v-else class="nav navbar-nav">
-
-                </ul>
                 <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search" v-model="search">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="검색..." v-model="search" style="width:500px;">
+                                <span class="input-group-btn">
+                                 <router-link :to="'/search/'+ search" activeClass="active" tag="button" class="btn btn-default">
+                                     검색
+                                 </router-link>
+                              </span>
+                            </div><!-- /input-group -->
+                        </div><!-- /.col-lg-6 -->
                     </div>
-                    <router-link :to="'/search/'+ search" activeClass="active" tag="button">
-                        Submit
-                    </router-link>
+
+
                 </form>
                 <ul v-if="loginCheck" class="nav navbar-nav navbar-right">
                     <router-link to="/logout" activeClass="active" tag="li"><a>LOGOUT</a></router-link>
-                    <router-link to="/mypage" activeClass="active" tag="li"><a>mypage</a></router-link>
+                    <router-link to="/mypage" activeClass="active" tag="li"><a>MYPAGE</a></router-link>
+                    <router-link to="/board/list" active-class="active" tag="li"><a>BOARDLIST</a></router-link>
+                    <router-link to="/board/write" active-class="active" tag="li"><a>BOARDWRITE</a></router-link>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
