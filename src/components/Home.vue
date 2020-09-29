@@ -1,7 +1,7 @@
 <template>
     <div id="welcome">
-        <div>
-            <img src="../image/mean.jpg" height="500px" width="50%" align="center">
+        <div class="container">
+            <span class="Home">KMDB</span>
         </div>
     </div>
 </template>
@@ -14,7 +14,8 @@ export default {
 
 <style scoped>
 #welcome {
-    width: 80%;
+    width: 1506px;
+    height: 755px;
     margin: 0px auto;
     text-align: center;
 }
@@ -25,5 +26,12 @@ h1 {
 
 p {
     text-align: center;
+}
+
+.Home{
+    font-size: 100px;
+    color: darkred;
+    font-weight: bold;
+    font-family: fantasy;
 }
 </style>

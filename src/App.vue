@@ -1,7 +1,8 @@
 <template>
   <div>
+      <div class="backImg">
       <app-header></app-header>
-      <div style="margin:100px;">
+      <div style="height: 200px;"></div>
           <transition name="slide" mode="out-in">
               <router-view :key="$route.fullPath"></router-view>
           </transition>
@@ -50,5 +51,10 @@ export default {
         transform: translateY(-30px);
         opacity: 0;
     }
+}
+.backImg{
+    background-image: url("./image/dark_knight_ver2.jpg");
+    min-width: 502px;
+    min-height: 900px;
 }
 </style>

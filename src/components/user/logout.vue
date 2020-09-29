@@ -6,12 +6,11 @@
 
 <script>
 export default {
-    beforeCreate(){
-        this.$store.state.loginState = false;
-        this.$store.state.token = null;
+    created(){
+        this.$store.dispatch('LOGOUT');
 
         alert('로그아웃 완료');
-        this.$router.go('/signin')
+        this.$router.push('/')
     }
 }
 </script>

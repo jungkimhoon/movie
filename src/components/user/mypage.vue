@@ -65,6 +65,7 @@ export default {
             }
         })
             .then(res =>  {
+                console.log('마이페이지');
                 this.info = res.data
             })
             .catch(error => {

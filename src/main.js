@@ -1,11 +1,15 @@
 import Vue from 'vue';
 import App from './App.vue';
 
-
 import axios from 'axios';
+
+import moment from 'moment'
+import VueMoment from "vue-momentjs";
+
 import router from './router';
 import store from './store/store';
 
+Vue.use(VueMoment, moment)
 
 axios.defaults.headers.get['Accepts'] = 'application/json'
 axios.defaults.headers.common['X-Naver-Client-Id'] = 'wp1eFPIkPNkn71JUjuX1';

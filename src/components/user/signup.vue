@@ -77,7 +77,10 @@ export default {
             }
             console.log(formData)
             axios.post('http://localhost:8088/users', formData)
-                 .then(res => console.log(res))
+                 .then(res => {
+                     alert('가입완료');
+                     this.$router.push('/');
+                 })
                  .catch(error => console.log(error))
         }
     }
@@ -88,9 +91,7 @@ export default {
 .signup-form {
     width: 400px;
     margin: 30px auto;
-    border: 1px solid #eee;
     padding: 20px;
-    box-shadow: 0 2px 3px #ccc;
 }
 
 .input {
@@ -99,7 +100,7 @@ export default {
 
 .input label {
     display: block;
-    color: #4e4e4e;
+    color: white;
     margin-bottom: 6px;
 }
 
@@ -112,7 +113,7 @@ export default {
     width: 100%;
     padding: 6px 12px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 1px solid #black;
 }
 
 .input.inline input {

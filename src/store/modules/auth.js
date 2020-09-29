@@ -7,13 +7,13 @@ const state = {
 }
 
 const mutations = {
-    'LOGIN' (state, token) {
+    'LOGIN' (state, payload) {
         state.loginState = true;
-        state.token = token;
+        state.token = payload;
     },
     'LOGOUT' (state) {
-        state.token = undefined;
-        state.loginState = false
+        state.token = null;
+        state.loginState = false;
     },
     'UPDATE_MY_INFO'(state, {email, age, password, country}){
         axios.put('http://localhost:8088/myPage', {
@@ -41,13 +41,14 @@ const actions = {
             password: formData.password
         })
         .then(res => {
-            commit('LOGIN', res.headers["authorization"])
+            const resToken = res.headers["authorization"];
+            console.log(res.headers["authorization"])
+            commit('LOGIN', resToken);
             // localStorage.setItem("access_token", token)
         })
         .catch(error => console.log(error))
     },
     'LOGOUT'({ commit }){
-        alert('로그아웃')
         commit('LOGOUT')
     },
     updateMyInfo({ commit }, info){
