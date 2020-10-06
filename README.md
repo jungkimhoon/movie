@@ -21,6 +21,10 @@ Spring Boot JPA <br>
 <img src="https://user-images.githubusercontent.com/59942147/95152166-69cf1f00-07c7-11eb-8688-4e0c03eec68c.png" width="80%"></img><br>
 <img src="https://user-images.githubusercontent.com/59942147/95152289-b155ab00-07c7-11eb-8ac2-8c71b2d67a47.png" width="80%"></img><br>
 infinite scroll을 적용하여 스크롤시 Spinner 동작과 함께 로딩됨<br><br>
+<img src="https://user-images.githubusercontent.com/59942147/95171066-52f0f280-07f0-11eb-8b72-39dfecfdc605.png" width="80%"></img><br>
+클릭 시 네이버 영화 상세 정보 링크로 이동<br><br>
+<img src="https://user-images.githubusercontent.com/59942147/95171432-d4488500-07f0-11eb-82eb-6388947b4f5b.png" width="80%"></img><br>
+
 
 # 회원 가입, 로그인, 수정
 <img src="https://user-images.githubusercontent.com/59942147/95154968-0399ca80-07ce-11eb-9c83-f2d8008d27b3.png" width="80%"></img><br>
@@ -33,3 +37,4 @@ infinite scroll을 적용하여 스크롤시 Spinner 동작과 함께 로딩됨<
 infinite scroll을 적용하여 스크롤시 Spinner 동작과 함께 로딩됨<br>
 <img src="https://user-images.githubusercontent.com/59942147/95155025-2926d400-07ce-11eb-96d6-11cf2fcd200f.png" width="80%"></img><br>
 <img src="https://user-images.githubusercontent.com/59942147/95155056-3c39a400-07ce-11eb-97c3-3c3b34ec417e.png" width="80%"></img><br>
+
