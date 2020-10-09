@@ -37,8 +37,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li role="presentation" v-if="loginCheck"><a @click="logout">LOGOUT</a></li>
                     <router-link to="/mypage" activeClass="active" tag="li" role="presentation" v-if="loginCheck"><a>MYPAGE</a></router-link>
-                    <router-link to="/board/list" active-class="active" tag="li" role="presentation" v-if="loginCheck"><a>BOARDLIST</a></router-link>
-                    <router-link to="/board/write" active-class="active" tag="li" role="presentation" v-if="loginCheck"><a>BOARDWRITE</a></router-link>
+                    <router-link to="/board/list" active-class="active" tag="li" role="presentation" v-if="loginCheck"><a>공지게시판</a></router-link>
+                    <router-link to="/board/write" active-class="active" tag="li" role="presentation" v-if="loginCheck"><a>공지글쓰기</a></router-link>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->

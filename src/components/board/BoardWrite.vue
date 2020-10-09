@@ -21,12 +21,11 @@
                 <h2>글 내용</h2>
                 <textarea class="form-control col-sm-5" rows="20" v-model="content"></textarea>
             </div>
+            <div class="container">
+                <br><br>
+                <button class="btn btn-primary btn-lg" @click="writeBoard">작성완료</button>
+            </div>
         </div>
-        <hr>
-        <div class="container">
-            <button class="btn btn-primary btn-lg" @click="writeBoard">작성완료</button>
-        </div>
-        <br>
     </div>
 
 
@@ -59,7 +58,7 @@ export default {
                 .then(res => {
                     console.log(res)
                     alert("작성완료")
-                    this.$router.go('/board/list')
+                    this.$router.push('/board/list')
                 })
                 .catch(err => console.log(err))
         }
@@ -68,5 +67,12 @@ export default {
 </script>
 
 <style scoped>
+.panel {
+    background-color: rgba( 255, 255, 255, 0 );
+    border: 0px;
+}
 
+h2{
+    color:white;
+}
 </style>

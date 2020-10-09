@@ -42,8 +42,12 @@ const actions = {
         })
         .then(res => {
             const resToken = res.headers["authorization"];
-            console.log(res.headers["authorization"])
-            commit('LOGIN', resToken);
+            if(resToken == undefined){
+                alert('다시 시도하세요.');
+                router.push('/signin');
+            }else {
+                commit('LOGIN', resToken);
+            }
             // localStorage.setItem("access_token", token)
         })
         .catch(error => console.log(error))

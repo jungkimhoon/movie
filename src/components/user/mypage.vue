@@ -1,7 +1,7 @@
 <template>
     <div id="signup">
         <div class="signup-form">
-            <h1>마이페이지</h1><hr>
+            <h1>정보수정</h1><hr>
             <form @submit.prevent="onSubmit">
                 <div class="input">
                     <label for="email">메일</label>
@@ -97,9 +97,7 @@ export default {
 .signup-form {
     width: 400px;
     margin: 30px auto;
-    border: 1px solid #eee;
     padding: 20px;
-    box-shadow: 0 2px 3px #ccc;
 }
 
 .input {
@@ -108,7 +106,9 @@ export default {
 
 .input label {
     display: block;
-    color: #4e4e4e;
+    color: white;
+    font-weight: bold;
+    font-size: 13pt;
     margin-bottom: 6px;
 }
 
@@ -122,6 +122,15 @@ export default {
     padding: 6px 12px;
     box-sizing: border-box;
     border: 1px solid #ccc;
+}
+
+h1{
+    color: white;
+    font-weight: bold;
+}
+
+hr {
+   border: 1px solid black;
 }
 
 .input.inline input {
@@ -150,7 +159,7 @@ export default {
 
 .hobbies button:hover,
 .hobbies button:active {
-    background-color: #8d4288;
+    background-color: darkred;
 }
 
 .hobbies input {
@@ -158,8 +167,8 @@ export default {
 }
 
 .submit button {
-    border: 1px solid #521751;
-    color: #521751;
+    border: 1px solid darkred;
+    color: darkred;
     padding: 10px 20px;
     font: inherit;
     cursor: pointer;
@@ -167,7 +176,7 @@ export default {
 
 .submit button:hover,
 .submit button:active {
-    background-color: #521751;
+    background-color: darkred;
     color: white;
 }
 
@@ -179,4 +188,6 @@ export default {
     color: #ccc;
     cursor: not-allowed;
 }
+
+
 </style>

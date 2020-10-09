@@ -20,9 +20,8 @@
                <pre>{{board_data.content}}</pre>
             </div>
         </div>
-        <hr>
         <div class="container">
-            <button class="btn btn-primary btn-lg">작성완료</button>
+            <button class="btn btn-primary btn-lg" @click="goBack()">목록으로</button>
         </div>
         <br>
     </div>
@@ -49,10 +48,17 @@ export default {
                console.log(res.data)
             })
             .catch(err => console.log(err))
+    },
+    methods :{
+        goBack(){
+            window.history.back();
+        }
     }
 }
 </script>
 
 <style scoped>
-
+h4{
+    color: white;
+}
 </style>
