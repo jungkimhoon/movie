@@ -6,11 +6,11 @@ Vue.js, BootStrap <br>
 Spring Boot JPA <br>
 
 <h3> 주요 메모 </h3>
-1. Vue.js를 활용한 SPA (SPA 링크달기..)<br>
-2. Spring Boot, JPA를 활용한 REST API (rest 링크...)<br>
-3. SPA 로그인 처리를 위한 JWT 사용 (JWT 링크..)<br>
+1. Vue.js를 활용한 SPA <a href="https://jungkimhoon.tistory.com/18?category=962592" target="_blank">https://jungkimhoon.tistory.com/18?category=962592<a><br>
+2. Spring Boot, JPA를 활용한 REST API (rest 링크...)<a href="https://jungkimhoon.tistory.com/6" target="_blank">https://jungkimhoon.tistory.com/6<a><br>
+3. SPA 로그인 처리를 위한 JWT 사용 (JWT 링크..)<a href="https://jungkimhoon.tistory.com/14?category=961498" target="_blank">https://jungkimhoon.tistory.com/14?category=961498<a><br>
 4. 영화 검색에 naver search api 사용<br>
-5. 영화, 공지 리스트 출력에 Infinite Scroll 적용 (infinite scroll 링크..)<br>
+5. 영화, 공지 리스트 출력에 Infinite Scroll 적용 (infinite scroll 링크..)<a href="https://jungkimhoon.tistory.com/10?category=962592" target="_blank">https://jungkimhoon.tistory.com/10?category=962592<a><br>
  
 
 
